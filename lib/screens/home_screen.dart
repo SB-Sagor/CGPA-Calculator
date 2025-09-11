@@ -1,5 +1,5 @@
-import 'package:cgpa/screens/cgpa_screen.dart';
 import 'package:cgpa/screens/gpa_screen.dart';
+import 'package:cgpa/screens/semester_cgpa_screen.dart';
 import 'package:cgpa/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 } else {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CgpaScreen()),
+                    MaterialPageRoute(builder: (context) => SemesterCgpaScreen()),
                   );
                 }
               },

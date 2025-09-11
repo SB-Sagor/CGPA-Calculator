@@ -13,8 +13,7 @@ class SemesterGpaScreen extends StatefulWidget {
 class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
   late List<Map<String, dynamic>> subjects;
   late List<TextEditingController> gradeControllers;
-  late List<double?> selectedGrades; // Declare here
-
+  List<double?> selectedGrades = [];
   final List<Map<String, dynamic>> gradeOptions = [
     {'label': 'A+', 'value': 4.00},
     {'label': 'A', 'value': 3.75},
@@ -28,6 +27,7 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
     {'label': 'F', 'value': 0.00},
   ];
 
+  @override
   @override
   void initState() {
     super.initState();
