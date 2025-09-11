@@ -53,7 +53,7 @@ class _GpaScreenState extends State<GpaScreen> {
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple,
+                  color: Color(0xFF92A7C7),
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(

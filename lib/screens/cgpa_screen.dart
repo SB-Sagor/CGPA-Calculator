@@ -39,7 +39,7 @@ class _CgpaScreenState extends State<CgpaScreen> {
                 margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 padding: EdgeInsets.symmetric(vertical: 14),
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple,
+                  color: Color(0xFF92A7C7),
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(

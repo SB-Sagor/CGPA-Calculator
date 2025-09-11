@@ -145,8 +145,8 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
-                foregroundColor: Colors.lightBlueAccent,
+                backgroundColor: Color(0xFF92A7C7),
+                foregroundColor: Colors.black,
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
