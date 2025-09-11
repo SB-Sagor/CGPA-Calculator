@@ -103,11 +103,14 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                             items: gradeOptions.map((item) {
                               return DropdownMenuItem<double>(
                                 value: item['value'],
-                                child: Row( // Or any other layout widget
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                child: Row(
+                                  // Or any other layout widget
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(item['label']),
-                                    Text("(${item['value']})"), // Displaying the value
+                                    Text("(${item['value']})"),
+                                    // Displaying the value
                                   ],
                                 ),
                               );
@@ -117,9 +120,7 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                                 selectedGrades[index] = value;
                               });
                             },
-                          )
-
-
+                          ),
                         ],
                       ),
                     ),
@@ -130,17 +131,58 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
             ElevatedButton(
               onPressed: () {
                 double gpa = calculateGpa();
-                showDialog(
+                showModalBottomSheet(
                   context: context,
-                  builder: (_) => AlertDialog(
-                    title: Text("Calculated GPA"),
-                    content: Text("Your GPA is: ${gpa.toStringAsFixed(2)}"),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text("OK"),
-                      ),
-                    ],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
+                  builder: (_) => Container(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      // mainAxisSize: MainAxisSize.min,
+                      // crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Calculated GPA",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Text(
+                          "Your GPA is: ${gpa.toStringAsFixed(2)}",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFF92A7C7),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(22),
+                              ),
+                              padding: EdgeInsets.symmetric(vertical: 14),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              "OK",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
