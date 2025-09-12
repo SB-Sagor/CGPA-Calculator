@@ -18,21 +18,31 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
     "Semester 7",
     "Semester 8",
   ];
+  final List<double> semesterCredits = [
+    20.50,
+    21.50,
+    22.25,
+    19.25,
+    19.50,
+    19.50,
+    20.50,
+    17.50,
+  ];
 
   List<double?> semesterGPAs = List.filled(8, null);
 
   double calculateCGPA() {
-    double totalGradePoints = 0;
-    int completedSemesters = 0;
+    double totalCreditPoints = 0;
+    double totalCredits = 0;
 
     for (int i = 0; i < semesterGPAs.length; i++) {
       if (semesterGPAs[i] != null) {
-        totalGradePoints += semesterGPAs[i]!;
-        completedSemesters++;
+        totalCreditPoints += semesterGPAs[i]! * semesterCredits[i];
+        totalCredits += semesterCredits[i];
       }
     }
 
-    return completedSemesters > 0 ? totalGradePoints / completedSemesters : 0.0;
+    return totalCredits > 0 ? totalCreditPoints / totalCredits : 0.0;
   }
 
   void _showGPABottomSheet(int index) {

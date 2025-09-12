@@ -41,49 +41,94 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Center(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                if (items[index] == "GPA") {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GpaScreen()),
-                  );
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SemesterCgpaScreen()),
-                  );
-                }
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                padding: EdgeInsets.symmetric(vertical: 14),
-                decoration: BoxDecoration(
-                  color: Color(0xFF92A7C7),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 4,
-                      offset: Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                  ),
-                ),
+      body: Column(
+        children: [
+          Container(
+            width: 160,
+            height: 160,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+              image: DecorationImage(
+                image: AssetImage('images/boss.png'),
+                fit: BoxFit.cover,
               ),
-            );
-          },
-        ),
+              border: Border.all(color: Color(0xFF92A7C7), width: 4),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 12,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "CGPA Calculator",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+          SizedBox(height: 5),
+          Text(
+            "Calculate your GPA & CGPA easily",
+            style: TextStyle(fontSize: 16, color: Colors.grey),
+          ),
+          SizedBox(height: 20),
+
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    if (items[index] == "GPA") {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GpaScreen()),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SemesterCgpaScreen(),
+                        ),
+                      );
+                    }
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF92A7C7),
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 4,
+                          offset: Offset(2, 2),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        items[index],
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
