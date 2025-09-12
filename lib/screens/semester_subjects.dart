@@ -31,7 +31,7 @@ final Map<String, List<Map<String, dynamic>>> semesterSubjects = {
     {"code": "CSE-2111", "title": "Data Structure and Algorithms Lab", "credit": 1.5},
     {"code": "CSE-2112", "title": "Object Oriented Programming Lab", "credit": 1.5},
     {"code": "CSE-2114", "title": "Digital Electronics & Pulse Techniques Lab", "credit": 1.5},
-    {"code": "EEE-2113", "title": "Electrical Circuits Lab", "credit": 1.5},
+    {"code": "EEE-2113", "title": "Electronic Devices and Circuits Lab", "credit": 0.75},
   ],
   "Semester 4": [
     {"code": "CSE-2201", "title": "Database Management Systems-I", "credit": 3.0},
