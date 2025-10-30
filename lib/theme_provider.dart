@@ -1,5 +1,6 @@
 import 'package:cgpa/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeData _themeData = lightMode;
@@ -13,11 +14,31 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleTheme() {
+  ThemeProvider() {
+    _loadTheme();
+  }
+
+  Future<void> toggleTheme() async {
     if (_themeData == lightMode) {
       themeData = darkMode;
     } else {
       themeData = lightMode;
     }
+    await _saveTheme();
+  }
+
+  _saveTheme() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setBool('isLightMode', isLightMode);
+  }
+
+  _loadTheme() async {
+    final pref = await SharedPreferences.getInstance();
+    if (pref.getBool('isLightMode') == true) {
+      themeData = lightMode;
+    } else {
+      themeData = darkMode;
+    }
+    notifyListeners();
   }
 }
