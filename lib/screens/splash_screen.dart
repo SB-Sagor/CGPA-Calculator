@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cgpa/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -14,17 +12,14 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
     );
-
-    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
 
     _controller.forward();
   }
@@ -43,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen>
         children: [
           TweenAnimationBuilder(
             tween: Tween(begin: 0.0, end: 1.0),
-            duration: Duration(seconds: 3),
+            duration: Duration(seconds: 1),
             builder: (context, value, child) {
               return Center(
                 child: Opacity(
@@ -70,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen>
           ),
           TweenAnimationBuilder(
             tween: Tween(begin: 2.0, end: 22.0),
-            duration: Duration(seconds: 3),
+            duration: Duration(seconds: 1),
             builder: (context, value, child) {
               return Text("Hi there!", style: TextStyle(fontSize: value));
             },

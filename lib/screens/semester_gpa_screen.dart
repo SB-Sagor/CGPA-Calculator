@@ -156,7 +156,7 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                           "Your GPA is: ${gpa.toStringAsFixed(2)}",
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.black87,
+                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

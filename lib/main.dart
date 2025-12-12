@@ -1,4 +1,3 @@
-import 'package:cgpa/screens/home_screen.dart';
 import 'package:cgpa/screens/splash_screen.dart';
 import 'package:cgpa/theme_provider.dart';
 import 'package:flutter/material.dart';
