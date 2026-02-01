@@ -1,3 +1,4 @@
+import 'package:cgpa/screens/home_screen.dart';
 import 'package:cgpa/screens/splash_screen.dart';
 import 'package:cgpa/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomeScreen(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }

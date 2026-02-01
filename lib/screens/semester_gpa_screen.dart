@@ -93,7 +93,6 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                           SizedBox(height: 4),
                           Text("Credit: ${subject['credit']}"),
                           SizedBox(height: 8),
-                          // If you want the value to be the whole map
                           DropdownButtonFormField<double>(
                             value: selectedGrades[index],
                             decoration: InputDecoration(
@@ -156,7 +155,6 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                           "Your GPA is: ${gpa.toStringAsFixed(2)}",
                           style: TextStyle(
                             fontSize: 18,
-                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -165,12 +163,17 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                           width: double.infinity,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF92A7C7),
+                              backgroundColor:
+                                  Theme.of(context).brightness ==
+                                      Brightness.light
+                                  ? const Color(0xFF92A7C7)
+                                  : const Color(0xFF243B55),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(22),
                               ),
-                              padding: EdgeInsets.symmetric(vertical: 14),
+                              padding: const EdgeInsets.symmetric(vertical: 14),
                             ),
+
                             onPressed: () => Navigator.pop(context),
                             child: Text(
                               "OK",
@@ -187,14 +190,24 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF92A7C7),
-                foregroundColor: Colors.black,
+                backgroundColor:
+                    Theme.of(context).brightness == Brightness.light
+                    ? const Color(0xFF92A7C7)
+                    : const Color(0xFF243B55),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22),
+                ),
               ),
+
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 child: Text(
                   "Calculate GPA",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),

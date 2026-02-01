@@ -18,16 +18,14 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 300),
     );
-
-    _controller.forward();
   }
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -38,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
         children: [
           TweenAnimationBuilder(
             tween: Tween(begin: 0.0, end: 1.0),
-            duration: Duration(seconds: 1),
+            duration: Duration(milliseconds: 300),
             builder: (context, value, child) {
               return Center(
                 child: Opacity(
@@ -47,14 +45,15 @@ class _SplashScreenState extends State<SplashScreen>
                     "images/result.json",
                     controller: _controller,
                     onLoaded: (composition) {
-                      _controller.duration = composition.duration;
-                      _controller.forward().whenComplete(() {
+                      _controller.forward();
+                      Future.delayed(const Duration(milliseconds: 800), () {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
                       });
                     },
+
                     height: 50 + value * 100,
                     width: 50 + value * 100,
                     fit: BoxFit.fill,
@@ -65,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
           ),
           TweenAnimationBuilder(
             tween: Tween(begin: 2.0, end: 22.0),
-            duration: Duration(seconds: 1),
+            duration: Duration(milliseconds: 300),
             builder: (context, value, child) {
               return Text("Hi there!", style: TextStyle(fontSize: value));
             },

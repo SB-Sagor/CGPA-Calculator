@@ -50,23 +50,57 @@ class _GpaScreenState extends State<GpaScreen> {
                   ),
                 );
               },
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Color(0xFF92A7C7),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black45,
-                      blurRadius: 4,
-                      offset: Offset(2, 2),
+              borderRadius: BorderRadius.circular(20),
+              splashColor: Colors.white24,
+              child: Hero(
+                tag: items[index],
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(20),
+                  ),
+                  elevation: 4,
+                  shadowColor: Colors.black54,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: Theme.of(context).brightness == Brightness.light
+                          ? const LinearGradient(
+                              colors: [
+                                Color(0xFF6A85B6),
+                                Color(0xFF92A7C7),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            )
+                          : const LinearGradient(
+                              colors: [
+                                Color(0xFF141E30),
+                                Color(0xFF243B55),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    items[index],
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.school, size: 40),
+                        SizedBox(height: 12),
+                        Text(
+                          items[index],
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 6),
+                        Text(
+                          "Tap to calculate GPA",
+                          style: TextStyle(fontSize: 14),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

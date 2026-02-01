@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -32,10 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   listen: false,
                 ).toggleTheme();
               },
-              child: Text(
+              child: Icon(
                 Provider.of<ThemeProvider>(context).isLightMode
-                    ? "Light"
-                    : "Dark",
+                    ? Icons.light_mode
+                    : Icons.dark_mode,
               ),
             ),
           ],
@@ -100,26 +101,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }
                   },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    padding: EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF92A7C7),
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 4,
-                          offset: Offset(2, 2),
-                        ),
-                      ],
+                  borderRadius: BorderRadius.circular(20),
+                  splashColor: Colors.white24,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.circular(16),
                     ),
-                    child: Center(
-                      child: Text(
-                        items[index],
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
+                    elevation: 6,
+                    shadowColor: Colors.black54,
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 18),
+                      decoration: BoxDecoration(
+                        gradient: themeProvider.isLightMode
+                            ? const LinearGradient(
+                                colors: [Color(0xFF6A85B6), Color(0xFF92A7C7)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              )
+                            : const LinearGradient(
+                                colors: [Color(0xFF0F2027), Color(0xFF2C5364)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Text(
+                          items[index],
+                          style: TextStyle(fontSize: 26),
                         ),
                       ),
                     ),

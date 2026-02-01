@@ -86,12 +86,15 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF92A7C7),
+                      backgroundColor: Theme.of(context).brightness == Brightness.light
+                          ? const Color(0xFF92A7C7)
+                          : const Color(0xFF243B55),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(22),
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 14),
+                      padding: const EdgeInsets.symmetric(vertical: 14),
                     ),
+
                     onPressed: () {
                       double? gpa = double.tryParse(gpaController.text);
                       if (gpa != null && gpa >= 0.0 && gpa <= 4.0) {
@@ -176,9 +179,25 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                     decoration: BoxDecoration(
-                      color: Color(0xFF92A7C7),
+                      gradient: Theme.of(context).brightness == Brightness.light
+                          ? const LinearGradient(
+                              colors: [
+                                Color(0xFF6A85B6),
+                                Color(0xFF92A7C7),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            )
+                          : const LinearGradient(
+                              colors: [
+                                Color(0xFF0F2027),
+                                Color(0xFF2C5364),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
                       borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black45,
                           blurRadius: 4,
@@ -186,6 +205,7 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                         ),
                       ],
                     ),
+
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
