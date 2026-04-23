@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 ## App Preview
 
-<p float="left">
+<p float="right">
   <img src="https://github.com/user-attachments/assets/982871ed-7119-4618-b87e-117ce849b183" width="120" height="180" />
   <img src="https://github.com/user-attachments/assets/0e475c1b-e929-456f-b947-cba57bbd8d62" width="120" height="180" />
   <img src="https://github.com/user-attachments/assets/cbb1b216-98cc-4ef8-b04f-f370d37b75fd" width="120" height="180" />
