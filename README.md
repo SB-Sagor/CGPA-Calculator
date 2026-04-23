@@ -15,7 +15,7 @@ A new Flutter project.
 <td><img src="https://github.com/user-attachments/assets/8041f833-f609-4864-98a7-00b957d6b68c" width="160"/></td>
 </tr>
 <tr>
-<img width="400" height="711" alt="WhatsApp Video 2026-04-23 at 10 53 59 PM (1)" src="https://github.com/user-attachments/assets/a75b9193-f9ac-4e0d-8c1d-be7704ceafdf" />
+<img width="325" height="675" alt="WhatsApp Video 2026-04-23 at 10 53 59 PM (1)" src="https://github.com/user-attachments/assets/a75b9193-f9ac-4e0d-8c1d-be7704ceafdf" />
 </tr>
 </table>
 
