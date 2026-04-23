@@ -15,9 +15,8 @@ A new Flutter project.
 <td><img src="https://github.com/user-attachments/assets/8041f833-f609-4864-98a7-00b957d6b68c" width="160"/></td>
 </tr>
 <tr>
-<td><img src="https://github.com/user-attachments/assets/1ac52d1e-4ae9-4184-93cf-271413fc541c" width="160"/></td>
-<td><img src="IMAGE_LINK_2" width="160"/></td>
-<td><img src="IMAGE_LINK_3" width="160"/></td>
+https://github.com/user-attachments/assets/1ac52d1e-4ae9-4184-93cf-271413fc541c"
+
 </tr>
 </table>
 
