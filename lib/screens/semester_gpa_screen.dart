@@ -143,13 +143,7 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                       // mainAxisSize: MainAxisSize.min,
                       // crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          "Calculated GPA",
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        Text("Calculated GPA", style: TextStyle(fontSize: 22)),
                         SizedBox(height: 12),
                         Text(
                           "Your GPA is: ${gpa.toStringAsFixed(2)}",
@@ -166,8 +160,8 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                               backgroundColor:
                                   Theme.of(context).brightness ==
                                       Brightness.light
-                                  ? const Color(0xFF92A7C7)
-                                  : const Color(0xFF243B55),
+                                  ? Colors.teal.shade100
+                                  : Colors.cyan.shade900,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(22),
                               ),
@@ -179,7 +173,11 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                               "OK",
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.black,
+                                color:
+                                    Theme.of(context).brightness ==
+                                        Brightness.light
+                                    ? Colors.black
+                                    : Colors.white,
                               ),
                             ),
                           ),
@@ -192,10 +190,10 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor:
                     Theme.of(context).brightness == Brightness.light
-                    ? const Color(0xFF92A7C7)
-                    : const Color(0xFF243B55),
+                    ? Colors.teal.shade100
+                    : Colors.cyan.shade900,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
 
@@ -204,9 +202,10 @@ class _SemesterGpaScreenState extends State<SemesterGpaScreen> {
                 child: Text(
                   "Calculate GPA",
                   style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    fontSize: 18,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.black
+                        : Colors.white,
                   ),
                 ),
               ),

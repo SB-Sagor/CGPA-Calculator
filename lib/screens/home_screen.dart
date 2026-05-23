@@ -49,12 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 160,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: Colors.teal.shade100,
               image: DecorationImage(
                 image: AssetImage('images/boss.png'),
                 fit: BoxFit.cover,
               ),
-              border: Border.all(color: Color(0xFF92A7C7), width: 4),
+              border: Border.all(color: Colors.teal.shade100, width: 4),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -70,13 +70,13 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.blue,
+              color: Colors.teal,
             ),
           ),
           SizedBox(height: 5),
           Text(
             "Calculate your GPA & CGPA easily",
-            style: TextStyle(fontSize: 16, color: Colors.grey),
+            style: TextStyle(fontSize: 16, color: Colors.teal),
           ),
           SizedBox(height: 20),
 
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                   },
                   borderRadius: BorderRadius.circular(20),
-                  splashColor: Colors.white24,
+                  splashColor: Colors.teal,
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadiusGeometry.circular(16),
@@ -117,13 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.symmetric(vertical: 18),
                       decoration: BoxDecoration(
                         gradient: themeProvider.isLightMode
-                            ? const LinearGradient(
-                                colors: [Color(0xFF6A85B6), Color(0xFF92A7C7)],
+                            ?  LinearGradient(
+                                colors: [Colors.teal.shade100, Colors.teal.shade200],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               )
-                            : const LinearGradient(
-                                colors: [Color(0xFF0F2027), Color(0xFF2C5364)],
+                            :  LinearGradient(
+                                colors: [Colors.cyan.shade800, Colors.cyan.shade900],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),

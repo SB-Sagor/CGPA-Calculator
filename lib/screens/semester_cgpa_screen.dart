@@ -86,9 +86,10 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).brightness == Brightness.light
-                          ? const Color(0xFF92A7C7)
-                          : const Color(0xFF243B55),
+                      backgroundColor:
+                          Theme.of(context).brightness == Brightness.light
+                          ? Colors.teal.shade100
+                          : Colors.cyan.shade900,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(22),
                       ),
@@ -114,7 +115,12 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                     },
                     child: Text(
                       "Save",
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.black
+                            : Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -155,13 +161,13 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Colors.cyan.shade800,
                   ),
                 ),
                 SizedBox(height: 4),
                 Text(
                   "Completed Semesters: $completedSemesters/8",
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  style: TextStyle(fontSize: 16, color: Colors.cyan.shade900),
                 ),
               ],
             ),
@@ -180,28 +186,31 @@ class _SemesterCgpaScreenState extends State<SemesterCgpaScreen> {
                     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                     decoration: BoxDecoration(
                       gradient: Theme.of(context).brightness == Brightness.light
-                          ? const LinearGradient(
+                          ? LinearGradient(
                               colors: [
-                                Color(0xFF6A85B6),
-                                Color(0xFF92A7C7),
+                                Colors.teal.shade100,
+                                Colors.teal.shade200,
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             )
-                          : const LinearGradient(
+                          : LinearGradient(
                               colors: [
-                                Color(0xFF0F2027),
-                                Color(0xFF2C5364),
+                                Colors.cyan.shade800,
+                                Colors.cyan.shade900,
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                             ),
                       borderRadius: BorderRadius.circular(16),
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
-                          color: Colors.black45,
+                          color:
+                              Theme.of(context).brightness == Brightness.light
+                              ? Colors.teal.shade100
+                              : Colors.cyan.shade900,
                           blurRadius: 4,
-                          offset: Offset(2, 2),
+                          offset: const Offset(2, 2),
                         ),
                       ],
                     ),
