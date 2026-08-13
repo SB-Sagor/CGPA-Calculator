@@ -51,7 +51,7 @@ https://github.com/SB-Sagor/CGPA-Calculator/releases/tag/v2.0.0
 
 ---
 
-## 🧑‍🎓 Target Users
+##  Target Users
 - Students of **NITER (University of Dhaka)**  
 - Juniors who want a quick way to calculate GPA/CGPA  
 - Anyone following the **University of Dhaka credit system**  
