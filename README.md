@@ -1,6 +1,6 @@
 <img width="1324" height="552" alt="cgpa" src="https://github.com/user-attachments/assets/b1eefa21-0f90-4c2b-a83f-fcf6187c01bd" />
 
-# CGPA & GPA Calculator (NITER-constituent institute of the University of Dhaka)
+# CGPA & GPA Calculator (NITER)
 
 A mobile application built with **Flutter** to calculate **GPA** and **CGPA** based on the official credit system of  
 **National Institute of Textile Engineering and Research (NITER), Constituent Institute of University of Dhaka**.  
