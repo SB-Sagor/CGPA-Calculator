@@ -47,6 +47,7 @@ It follows the **University of Dhaka credit rules** and provides a simple, user�
 
 ## 🔗 Demo
 👉 APK file available for installation.  
+https://github.com/SB-Sagor/CGPA-Calculator/releases/tag/v2.0.0
 
 ---
 
