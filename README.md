@@ -26,8 +26,6 @@ It follows the **University of Dhaka credit rules** and provides a simple, user�
 ##  Tech Stack
 - **Flutter** → Cross‑platform mobile framework  
 - **Dart** → Programming language  
-- **MVVM Architecture** → Clean separation of UI and logic  
-- **Firebase (optional)** → For backup and sync (future scope)  
 
 ---
 
@@ -48,7 +46,6 @@ It follows the **University of Dhaka credit rules** and provides a simple, user�
 ---
 
 ## 🔗 Demo
-👉 Screenshots included in the repository.  
 👉 APK file available for installation.  
 
 ---
